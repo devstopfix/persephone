@@ -1,4 +1,4 @@
-(defproject clojurewerkz/persephone "0.1.2-SNAPSHOT"
+(defproject clojurewerkz/persephone "0.1.3"
   :description "Clojure DSL that generates [Neo4J] Cypher queries"
   :url "http://github.com/clojurewerkz/persephone"
   :license {:name "Eclipse Public License"

@@ -40,6 +40,7 @@
    :where []
    :return []
    :delete []
+   :create []
    :order-by []
    :limit nil
    :skip nil})
@@ -169,6 +170,14 @@
      (update-in query [:delete] conj row))
   ([query row & more]
      (reduce delete (delete query row) more)))
+
+(defn create
+  "Add one node to a Cypher query CREATE clause.
+
+  Ex.
+    (create \"n\" {:p \"value\"})"
+  ([node props]
+   (compiler/compile-create node props)))
 
 (defn limit
   "Add a LIMIT clause to a Cypher query.

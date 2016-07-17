@@ -72,3 +72,13 @@
 
     (is (= (-> empty-query (return :n) (return :p) :return)
            [:n :p]))))
+
+(testing "create"
+  (deftest test-create-node-with-properties
+    (is (= "CREATE (RogerRabbit:Movie {tagline: 'It/'s the story of a man, a woman, and a rabbit in a triangle of trouble.', released: 1989, title:'Who Framed Roger Rabbit'})"
+          (create
+                "RogerRabbit:Movie"
+
+                 {:title    "Who Framed Roger Rabbit"
+                  :released 1989
+                  :tagline  "It's the story of a man, a woman, and a rabbit in a triangle of trouble."})))))

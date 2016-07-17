@@ -280,3 +280,7 @@
               limit-clause))
        (remove nil?)
        (str/join "\n")))
+
+(defn compile-create
+  "Render a Cypher CREATE statement"
+  ([node props] (format "CREATE %s %s" node (render-pattern [props]))))

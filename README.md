@@ -8,6 +8,15 @@ to augment Clojure Neo4J clients such as [Neocons](http://clojureneo4j.info).
 
 TBD when the project matures and the API stabilizes.
 
+### CREATE
+
+```clojure
+
+(require '[clojurewerkz.persephone :as cy])
+
+(cy/start (cy/create "RogerRabbit:Movie" {}))
+
+```
 
 ## Community
 
