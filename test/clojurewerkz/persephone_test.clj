@@ -73,8 +73,24 @@
     (is (= (-> empty-query (return :n) (return :p) :return)
            [:n :p]))))
 
-(testing "create"
-  (deftest test-create-node-with-properties
+(deftest test-create-node-with-properties
+  (testing "CREATE clauses"
+    (is (= "CREATE (n)"
+           (create :n)))
+
+    (is (= "CREATE (n:Person)"
+           (create :n:Person)))
+
+    (is (= "CREATE (n:Person:Swedish)"
+           (create :n:Person:Swedish)))
+
+    (is (= "CREATE (n:Person {name: \"Andres\", title: \"Developer\"})"
+           (create {:n:Person {:name "Andres" :title "Developers"}}))))
+  ;(test "CREATE with RETURN"
+  ;      (is (= "CREATE (a {name: \"Andres\"})\nRETURN a"
+  ;             (create {:a {:name "Andres"}}
+  ;                     (return :a)))))
+  (testing "create"
     (is (= "CREATE (RogerRabbit:Movie {tagline: 'It/'s the story of a man, a woman, and a rabbit in a triangle of trouble.', released: 1989, title:'Who Framed Roger Rabbit'})"
           (create
                 "RogerRabbit:Movie"

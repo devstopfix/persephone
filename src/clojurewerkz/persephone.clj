@@ -176,6 +176,7 @@
 
   Ex.
     (create \"n\" {:p \"value\"})"
+  ([node] (create node {}))
   ([node props]
    (compiler/compile-create node props)))
 

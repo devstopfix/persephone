@@ -11,11 +11,10 @@ TBD when the project matures and the API stabilizes.
 ### CREATE
 
 ```clojure
-
 (require '[clojurewerkz.persephone :as cy])
 
-(cy/start (cy/create "RogerRabbit:Movie" {}))
-
+(cy/create "RogerRabbit:Movie" {})
+;; "CREATE RogerRabbit:Movie {}"
 ```
 
 ## Community
